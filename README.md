@@ -93,10 +93,6 @@ Both notebooks follow the same pipeline:
 
 ## YouTube Video
 
-[Insert unlisted YouTube link here]
+[Unlisted YouTube link](https://youtu.be/jXhCv-Egqms)]
 
 ---
-
-## Academic Integrity
-
-This repository is private. Instructor and TAs have been invited as collaborators.
