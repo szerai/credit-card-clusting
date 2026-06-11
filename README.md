@@ -9,7 +9,7 @@ Segment customers using K-Means and Hierarchical (Agglomerative) Clustering and 
 | Dataset | File | Source |
 |---|---|---|
 | Primary | `data/credit_card.csv` | Provided by instructor |
-| Secondary | `data/segmentation_dara.csv` | [Kaggle](https://www.kaggle.com/datasets/dev0914sharma/customer-clustering?select=segmentation+data.csv) |
+| Secondary | `data/segmentation_data.csv` | [Kaggle](https://www.kaggle.com/datasets/dev0914sharma/customer-clustering?select=segmentation+data.csv) |
 
 ---
 
@@ -58,8 +58,6 @@ jupyter notebook
 **5. Open and run both notebooks**
 - `credit_card_analysis.ipynb`
 - `fraud_analysis.ipynb`
-
-Make sure all cells are executed top to bottom before reviewing results.
 
 ---
 
