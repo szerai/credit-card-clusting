@@ -9,7 +9,7 @@ Segment customers using K-Means and Hierarchical (Agglomerative) Clustering and 
 | Dataset | File | Source |
 |---|---|---|
 | Primary | `data/credit_card.csv` | Provided by instructor |
-| Secondary | `data/fraud.csv` | [Kaggle](https://www.kaggle.com) |
+| Secondary | `data/segmentation_dara.csv` | [Kaggle](https://www.kaggle.com/datasets/dev0914sharma/customer-clustering?select=segmentation+data.csv) |
 
 ---
 

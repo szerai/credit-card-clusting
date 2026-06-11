@@ -1,0 +1,21 @@
+name: project_1
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - imbalanced-learn
+  - stable-baselines3
+  - gymnasium
+  - jupyter
+  - pip
+  - nltk
+  - pip:
+      - tqdm
+      - black
+      - flake8

@@ -1,0 +1,130 @@
+DATA DICTIONARY
+
+--------------------------------------------------------------------------------
+DATASET 1: credit_card.csv
+Source: Provided by instructor
+Rows: 661 | Columns: 7
+--------------------------------------------------------------------------------
+
+Column Name            Data Type   Description
+------------------------------------------------------------------------------
+Sl_No                  int64       Sequential row number. Identifier only —
+                                   dropped before analysis. No relationship
+                                   to any feature. Range: 1–660.
+
+Customer Key           int64       Unique customer identifier. Dropped before
+                                   analysis as it carries no clustering signal.
+                                   Range: 11265–99843.
+
+Avg_Credit_Limit       float64     Average credit limit assigned to the customer
+                                   across all credit cards held. Primary feature
+                                   for segmentation — widest value range in the
+                                   dataset. Range: ~3000–200000. No missing
+                                   values. Outliers removed via IQR.
+
+Total_Credit_Cards     float64     Total number of credit cards held by the
+                                   customer. Integer values stored as float.
+                                   Range: 1–10. No missing values. Caveat:
+                                   does not distinguish between active and
+                                   inactive cards.
+
+Total_visits_bank      float64     Total number of in-person bank visits made
+                                   by the customer. Range: 0–5. No missing
+                                   values. Caveat: may reflect branch
+                                   availability rather than customer preference.
+
+Total_visits_online    float64     Total number of online banking sessions or
+                                   logins recorded. Range: 0–15. No missing
+                                   values. Caveat: session counting methodology
+                                   not specified.
+
+Total_calls_made       float64     Total number of calls made by the customer
+                                   to the bank's contact center. Range: 0–10.
+                                   No missing values. Caveat: high call counts
+                                   may indicate complaints rather than
+                                   engagement.
+
+Feature Relationships:
+  - Avg_Credit_Limit is the strongest clustering signal due to high variance.
+  - Total_visits_bank and Total_visits_online tend to be inversely related —
+    customers who visit online more often visit the branch less frequently.
+  - Total_calls_made is weakly correlated with other engagement features.
+
+Columns dropped before modeling: Sl_No, Customer Key
+Columns used for clustering: Avg_Credit_Limit, Total_Credit_Cards,
+                              Total_visits_bank, Total_visits_online,
+                              Total_calls_made
+
+
+--------------------------------------------------------------------------------
+DATASET 2: segmentation_data.csv
+Source: Kaggle — Customer Segmentation dataset
+Rows: 2000 | Columns: 8
+--------------------------------------------------------------------------------
+
+Column Name            Data Type   Description
+------------------------------------------------------------------------------
+ID                     int64       Unique customer identifier. Dropped before
+                                   analysis. Range: 100000001–100002000.
+                                   Sequential with no gaps.
+
+Sex                    int64       Binary-encoded biological sex.
+                                   0 = Male, 1 = Female.
+                                   No missing values. Limitation: binary
+                                   encoding does not capture full gender
+                                   diversity.
+
+Marital status         int64       Binary-encoded marital status.
+                                   0 = Single, 1 = Married (or partnered).
+                                   No missing values. Caveat: does not
+                                   distinguish divorced, widowed, etc.
+
+Age                    int64       Customer age in years. Continuous feature.
+                                   Range: 18–76. No missing values. One of
+                                   two continuous features — recommended for
+                                   scatter plot axis.
+
+Education              int64       Ordinal-encoded education level.
+                                   0 = Other / unknown
+                                   1 = High school
+                                   2 = University degree
+                                   3 = Graduate degree
+                                   No missing values. Treated as ordinal
+                                   for scaling purposes.
+
+Income                 int64       Annual income in local currency units.
+                                   Continuous feature with the widest range
+                                   in the dataset. Range: ~35000–309000.
+                                   No missing values. Recommended for scatter
+                                   plot axis alongside Age. High-income
+                                   outliers present — review after IQR removal.
+
+Occupation             int64       Ordinal-encoded occupation category.
+                                   0 = Unemployed / unskilled
+                                   1 = Skilled employee / official
+                                   2 = Management / self-employed
+                                   No missing values.
+
+Settlement size        int64       Encoded size of the area where the customer
+                                   lives.
+                                   0 = Small city / rural
+                                   1 = Mid-sized city
+                                   2 = Large city
+                                   No missing values.
+
+Feature Relationships:
+  - Income and Age are the only continuous features; all others are categorical
+    or ordinal with 2–4 unique values.
+  - Income and Occupation are likely positively correlated — higher occupation
+    codes tend to have higher incomes.
+  - Settlement size and Occupation may correlate — management roles more
+    common in large cities.
+  - Sex and Marital status are binary and will produce horizontal/vertical
+    banding in scatter plots — not recommended as plot axes.
+
+Columns dropped before modeling: ID
+Columns used for clustering: Sex, Marital status, Age, Education,
+                              Income, Occupation, Settlement size
+Recommended scatter plot axes: Income (x), Age (y)
+
+
