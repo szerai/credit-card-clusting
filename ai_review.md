@@ -46,4 +46,8 @@ Overall: good structure and a solid start, but the biggest issue is Step 8’s K
 
 I think the concern about the number of outliers removed isn't justified considering the size of the dataset, and while the outliers were few on the higher end of the credit card limit set, the removal of them was justified. I like the cluster profile concept. . I agree with the assessment regarding I can add more detail in my analysis, but I was intential about putting analysis throughout the notebook to ensure it was  a smooth read/ follow.
 
+NOTE:
+I did make the fix from point 1 (not an analysis change!) after review from AI
+
+
 
