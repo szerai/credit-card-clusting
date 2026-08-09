@@ -1,4 +1,4 @@
-# CSB320 — Customer Segmentation with Clustering
+# Customer Segmentation with Clustering
 
 Segment customers using K-Means and Hierarchical (Agglomerative) Clustering and evaluate cluster quality using silhouette and Davies-Bouldin scores.
 
